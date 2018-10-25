@@ -21,12 +21,14 @@ public class Move : MonoBehaviour
         //左右移動
         if (Input.GetAxis("Horizontal") != 0)
         {
-            transform.position += new Vector3(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0, 0);
+            transform.position += new Vector3(Input.GetAxis("Horizontal") * speed * Time.deltaTime,
+                Vector3.zero.y, Vector3.zero.z);
         }
         //ジャンプ
         if (Input.GetButtonDown("Jump"))
         {
-            rigid.AddForce(transform.up * jumpPower);
+            //rigid.AddForce(transform.up * jumpPower);
+            rigid.AddForce(new Vector3(Vector3.zero.x, jumpPower, Vector3.zero.z));
         }
 	}
 }
