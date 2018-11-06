@@ -9,6 +9,7 @@ public class Move : MonoBehaviour
     [SerializeField]
     float jumpPower;
     Rigidbody rigid;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -27,7 +28,6 @@ public class Move : MonoBehaviour
         //ジャンプ
         if (Input.GetButtonDown("Jump"))
         {
-            //rigid.AddForce(transform.up * jumpPower);
             rigid.AddForce(new Vector3(Vector3.zero.x, jumpPower, Vector3.zero.z));
         }
 	}
